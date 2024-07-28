@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Trends Visualization</title>
+    <link rel='stylesheet' href='style.css'>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 style="text-align: center;">Movie Trends Visualization</h1>
+        <div id="charts">
+            <div id="scene1" class="scene">
+                <h2>Scene 1: Movie Production by Genre Over the Years</h2>
+                <div class="intro">
+                    <ul>
+                        <li>In 1994, Comedy movies made up a significant 40.5% of all movies released, marking it as a
+                            peak year for the genre.</li>
+                        <li>Action movies saw their highest representation in 2016, constituting 32.0% of all releases.
+                        </li>
+                        <li>This visualization highlights the trends and shifts in genre popularity over the years,
+                            providing insights into the changing landscape of the movie industry.</li>
+                    </ul>
+                </div>
+                <div id="stacked-bar-chart"></div>
+            </div>
+            <div id="scene2" class="scene" style="display:none;">
+                <h2>Scene 2: Budget vs. Box Office Earnings</h2>
+                <div class="intro">
+                    <ul>
+                        <li>This slide explores the financial aspects of movie production.</li>
+                        <li>It shows whether higher budgets lead to higher box office earnings.</li>
+                        <li>This scene sets the stage for exploring financial success in the movie industry.</li>
+                    </ul>
+                    <label for="yearSelector">Select Year: </label>
+                    <select id="yearSelector">
+                        <option value="all">All Years</option>
+                    </select>
+                </div>
+                <div id="scatterplot"></div>
+            </div>
+            <div id="scene3" class="scene" style="display:none;">
+                <h2>Scene 3: Global Movie Production</h2>
+                <div class="intro">
+                    <ul>
+                        <li>This slide presents the global landscape of movie production.</li>
+                        <li>It shows how different regions contribute to the movie industry.</li>
+                        <li>This scene sets the stage for exploring geographical patterns in movie production.</li>
+                    </ul>
+                </div>
+                <div id="slider"></div>
+                <div id="choropleth-map"></div>
+            </div>
+
+
+        </div>
+        <div id="tooltip"></div>
+        <div class="navigation">
+            <button id="prev" onclick="showPrevScene()">Previous</button>
+            <button id="next" onclick="showNextScene()">Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
