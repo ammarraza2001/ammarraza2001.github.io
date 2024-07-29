@@ -97,7 +97,7 @@ function renderChoroplethMap(data) {
 
    const annotation = [{
        note: {
-           label: highestProductionCountry.key,
+           label: '',
            title: "Highest Movie Production"
        },
        connector: {
@@ -108,7 +108,7 @@ function renderChoroplethMap(data) {
        },
        color: "#7F2803",
        x: x,
-       y: y,
+       y: y + 30,
        dy: -70,
        dx: 70
    }];
@@ -270,7 +270,7 @@ function renderStackedBarChart(data) {
         },
         color: "#7F2803",           // Color for the annotation elements
         x: annotation.x,
-        y: annotation.y,
+        y: annotation.y +15,
         dy: annotation.dy,
         dx: annotation.dx
     }));
@@ -451,4 +451,3 @@ function initializeScatterplot() {
     // Initial render with all data
     renderScatterplot(moviesData);
 }
-
