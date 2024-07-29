@@ -153,7 +153,7 @@ function renderStackedBarChart(data) {
 
     const color = d3.scaleOrdinal()
         .domain(genres)
-        .range(d3.schemeTableau10);
+        .range(d3.schemeCategory20);
 
     const stack = d3.stack()
         .keys(genres)
