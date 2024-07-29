@@ -133,6 +133,11 @@ function renderStackedBarChart(data) {
     const margin = { top: 20, right: 350, bottom: 30, left: 40 };
     const width = 1460 - margin.left - margin.right;
     const height = 600 - margin.top - margin.bottom;
+    const customColors = [
+        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
+        '#aec7e8', '#ffbb78', '#98df8a', '#ff9896', '#c5b0d5', '#c49c94', '#f7b6d2', '#c7c7c7', '#dbdb8d', '#9edae5',
+        '#393b79', '#5254a3', '#6b6ecf', '#9c9ede', '#637939', '#8ca252', '#b5cf6b', '#cedb9c', '#8c6d31', '#bd9e39'
+    ];
 
     const svg = d3.select("#stacked-bar-chart").append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -153,7 +158,7 @@ function renderStackedBarChart(data) {
 
     const color = d3.scaleOrdinal()
         .domain(genres)
-        .range(d3.schemeCategory20);
+        .range(customColors);
 
     const stack = d3.stack()
         .keys(genres)
@@ -292,7 +297,11 @@ function renderScatterplot(data) {
     const margin = { top: 120, right: 150, bottom: 50, left: 120 };
     const width = 1460 - margin.left - margin.right;
     const height = 600 - margin.top - margin.bottom;
-
+    const customColors = [
+        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
+        '#aec7e8', '#ffbb78', '#98df8a', '#ff9896', '#c5b0d5', '#c49c94', '#f7b6d2', '#c7c7c7', '#dbdb8d', '#9edae5',
+        '#393b79', '#5254a3', '#6b6ecf', '#9c9ede', '#637939', '#8ca252', '#b5cf6b', '#cedb9c', '#8c6d31', '#bd9e39'
+    ];
     const svg = d3.select("#scatterplot").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -320,7 +329,7 @@ function renderScatterplot(data) {
 
     const color = d3.scaleOrdinal()
         .domain(genres)
-        .range(d3.schemeTableau10);
+        .range(customColors);
 
     svg.append("g")
         .attr("class", "axis axis--x")
